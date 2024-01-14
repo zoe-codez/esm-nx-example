@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/utilities-out-tsc"
+  },
+  "exclude": [
+    "jest.config.ts",
+    "src/**/*.spec.ts"
+  ],
+  "include": [
+    "src/**/*.mts"
+  ]
+}

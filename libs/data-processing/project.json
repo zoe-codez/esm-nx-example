@@ -1,0 +1,35 @@
+{
+  "name": "data-processing",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/data-processing/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/data-processing",
+        "tsConfig": "libs/data-processing/tsconfig.lib.json",
+        "packageJson": "libs/data-processing/package.json",
+        "main": "libs/data-processing/src/index.mts",
+        "assets": ["libs/data-processing/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs data-processing {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/data-processing/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

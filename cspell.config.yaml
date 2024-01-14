@@ -1,0 +1,16 @@
+version: "0.2"
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - list
+  - of
+  - words
+  - that
+  - aren't
+  - in
+  - your
+  - normal
+  - dictionary
+ignoreWords: []
+import: []

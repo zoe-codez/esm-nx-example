@@ -1,0 +1,53 @@
+{
+  "compileOnSave": false,
+  "include": ["**/src/**/*.mts"],
+  "compilerOptions": {
+    "allowJs": false,
+    "alwaysStrict": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "composite": true,
+    "isolatedModules": true,
+    "importHelpers": true,
+    "lib": ["ESNext"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "rootDir": ".",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "target": "ESNext",
+    "paths": {
+      "@demo-ts/api-utils": [
+        "libs/api-utils/src/index.mts"
+      ],
+      "@demo-ts/data-processing": [
+        "libs/data-processing/src/index.mts"
+      ],
+      "@demo-ts/utilities": [
+        "libs/utilities/src/index.mts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp", "dist"],
+  "references": [
+    {
+      "path": "./libs/api-utils/tsconfig.json"
+    },
+    {
+      "path": "./libs/data-processing/tsconfig.json"
+    },
+    {
+      "path": "./libs/utilities/tsconfig.json"
+    }
+  ]
+}

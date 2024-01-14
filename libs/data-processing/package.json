@@ -1,0 +1,9 @@
+{
+  "name": "@demo-ts/data-processing",
+  "version": "0.0.1",
+  "type": "module",
+  "dependencies": {
+    "tslib": "^2.6.2",
+    "@demo-ts/utilities": "*"
+  }
+}

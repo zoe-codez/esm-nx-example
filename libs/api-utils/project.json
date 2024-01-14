@@ -1,0 +1,35 @@
+{
+  "name": "api-utils",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api-utils/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api-utils",
+        "tsConfig": "libs/api-utils/tsconfig.lib.json",
+        "packageJson": "libs/api-utils/package.json",
+        "main": "libs/api-utils/src/index.ts",
+        "assets": ["libs/api-utils/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs api-utils {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/api-utils/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
